@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.28.2)
+file(GLOB_RECURSE SIMG_SOURCES "../libsimg/src/*.c")
+project(siemens-rip C)
+add_executable(siemens-rip ${SIMG_SOURCES} src/siemens_rip.c)
+target_include_directories(siemens-rip PRIVATE "../libsimg/src/")
+target_compile_options(siemens-rip PRIVATE -std=c11 -Wall -Werror)
